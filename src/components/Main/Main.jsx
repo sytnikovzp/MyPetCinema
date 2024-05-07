@@ -31,7 +31,7 @@ export class Main extends Component {
                   <div className='data-column'>
                     <p>США</p>
                     <p>"Universal"</p>
-                    <p>Приключения, фантастика, комедии, зарубежное</p>
+                    <p>Приключения, фантастика, комедии</p>
                     <p>1985</p>{' '}
                     <p>
                       {actors.map((actor) => {

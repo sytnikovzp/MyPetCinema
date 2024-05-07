@@ -1,7 +1,10 @@
 import React from 'react';
 import Header from './components/Header/Header';
+import Menu from './components/Menu/Menu';
 import Main from './components/Main/Main';
+import Aside from './components/Aside/Aside';
 import Footer from './components/Footer/Footer';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -33,7 +36,11 @@ class App extends React.Component {
     return (
       <>
         <Header movies={this.state.movies} />
-        <Main actors={this.state.actors} />
+        <div id='container'>
+          <Menu />
+          <Main actors={this.state.actors} />
+          <Aside />
+        </div>
         <Footer movieStudio={this.state.movieStudio} />
       </>
     );
