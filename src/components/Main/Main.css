@@ -1,0 +1,57 @@
+#main {
+  position: relative;
+  top: 10px;
+  margin: 7%;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-name {
+  margin-left: 25px;
+  color: floralwhite;
+}
+
+.movie-container {
+  margin: 25px;
+}
+
+.movie-information {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-container {
+  height: 300px;
+}
+
+.poster {
+  border: 1px solid #f7faff;
+  border-radius: 1%;
+  width: inherit;
+  height: 100%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.data-column {
+  margin-left: 10px;
+  width: 80%;
+}
+
+.storyline-container {
+  text-align: justify;
+}

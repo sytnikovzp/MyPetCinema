@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends React.Component {
+  state = {
+    movies: [
+      'Терминатор 2: Судный день',
+      'Назад в будущее',
+      'Звездные войны: Возвращение Джедая',
+    ],
+    actors: [
+      'Майкл Дж. Фокс',
+      'Кристофер Ллойд',
+      'Лиа Томпсон',
+      'Криспин Гловер',
+      'Томас Ф. Уилсон',
+      'Клаудия Уэллс',
+      'Марк МакКлюр',
+      'Уэнди Джо Спербер',
+      'Джордж ДиЧенцо',
+      'Фрэнсис Ли МакКейн',
+    ],
+    movieStudio: [
+      'г. Киев ул. Закревского, 22',
+      'faculty@film.ua',
+      '+38 044 459 46 10',
+    ],
+  };
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  render() {
+    return (
+      <>
+        <Header movies={this.state.movies} />
+        <Main actors={this.state.actors} />
+        <Footer movieStudio={this.state.movieStudio} />
+      </>
+    );
+  }
 }
 
-export default App
+export default App;

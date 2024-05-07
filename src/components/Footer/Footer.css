@@ -1,0 +1,42 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color: #333;
+}
+
+.footer-border {
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.img-footer {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #927076;
+}
+
+.text-footer {
+  text-align: center;
+  font-size: 14px;
+  color: #927076;
+}
+
+.text-footer > p,
+a {
+  margin: auto;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.social-net {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
