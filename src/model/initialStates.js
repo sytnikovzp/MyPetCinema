@@ -1,9 +1,9 @@
 export const moviesState = [
   {
     id: null,
-    fName: 'Connecting to ',
-    lName: 'dababase...',
-    eMail: '',
-    cPhone: '',
+    movieTitle: 'Connecting to ',
+    directorName: 'dababase...',
+    countryName: '',
+    releaseYear: '',
   },
 ];

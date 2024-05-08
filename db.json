@@ -1,25 +1,25 @@
 {
   "movies": [
     {
-      "id": 2,
-      "fName": "Надежда",
-      "lName": "Ситникова",
-      "eMail": "tester@gmail.com",
-      "cPhone": "0976996744"
+      "id": 6,
+      "movieTitle": "Indiana Johns",
+      "directorName": "Stiven Spilberg",
+      "countryName": "USA",
+      "releaseYear": "1984"
     },
     {
-      "id": 5,
-      "fName": "Арина",
-      "lName": "Ситникова",
-      "eMail": "",
-      "cPhone": "0612397879"
+      "id": 7,
+      "movieTitle": "Lord of the rings",
+      "directorName": "Peter Jackson",
+      "countryName": "New Zealand",
+      "releaseYear": "2001"
     },
     {
-      "id": 16,
-      "fName": "dfgd",
-      "lName": "",
-      "eMail": "",
-      "cPhone": ""
+      "id": 8,
+      "movieTitle": "Гладиатор",
+      "directorName": "Ридли Скотт",
+      "countryName": "Great Britain",
+      "releaseYear": "2000"
     }
   ]
 }

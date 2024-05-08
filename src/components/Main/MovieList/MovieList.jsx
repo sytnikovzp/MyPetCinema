@@ -16,7 +16,7 @@ function MovieList() {
 
   return (
     <div id='wrapper-list'>
-      <h3>Бестселлеры кино:</h3>
+      <h3>Bestselling movies:</h3>
       <div id='movie-list'>
         {movies.map((movie) => {
           return <MovieItem key={movie.id} movie={movie} />;

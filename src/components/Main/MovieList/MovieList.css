@@ -1,19 +1,18 @@
 #wrapper-list {
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
 }
 
 #wrapper-list > h3 {
-  /* text-align: left; */
   margin-bottom: 10px;
   color: white;
 }
 
 #movie-list {
-  width: 700px;
+  width: 730px;
   height: 300px;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

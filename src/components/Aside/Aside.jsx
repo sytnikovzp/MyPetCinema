@@ -58,10 +58,10 @@ function Aside() {
         <div className='movie-form-item'>
           <input
             type='text'
-            name='fName'
-            id='fName'
-            placeholder='First name'
-            value={movie.fName}
+            name='movieTitle'
+            id='movieTitle'
+            placeholder='Movie title'
+            value={movie.movieTitle}
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
@@ -71,10 +71,10 @@ function Aside() {
         <div className='movie-form-item'>
           <input
             type='text'
-            name='lName'
-            id='lName'
-            placeholder='Last name'
-            value={movie.lName}
+            name='directorName'
+            id='directorName'
+            placeholder='Director name'
+            value={movie.directorName}
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
@@ -83,11 +83,11 @@ function Aside() {
         </div>
         <div className='movie-form-item'>
           <input
-            type='email'
-            name='eMail'
-            id='eMail'
-            placeholder='E-mail'
-            value={movie.eMail}
+            type='text'
+            name='countryName'
+            id='countryName'
+            placeholder='Country'
+            value={movie.countryName}
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
@@ -96,11 +96,11 @@ function Aside() {
         </div>
         <div className='movie-form-item'>
           <input
-            type='tel'
-            name='cPhone'
-            id='cPhone'
-            placeholder='Phone'
-            value={movie.cPhone}
+            type='text'
+            name='releaseYear'
+            id='releaseYear'
+            placeholder='Year'
+            value={movie.releaseYear}
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>

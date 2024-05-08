@@ -92,9 +92,9 @@ export default function moviesReducer(
 function createEmptyMovie() {
   return {
     id: null,
-    fName: '',
-    lName: '',
-    eMail: '',
-    cPhone: '',
+    movieTitle: '',
+    directorName: '',
+    countryName: '',
+    releaseYear: '',
   };
 }

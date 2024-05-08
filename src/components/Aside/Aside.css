@@ -1,9 +1,9 @@
 #wrapper-form {
-  border: 1px solid black;
   height: 300px;
   padding: 10px;
-  margin-right: 2%;
+  margin-right: 3%;
   background-color: #444;
+  border: 1px solid rgb(97, 96, 96);
 }
 
 #wrapper-form > h3 {

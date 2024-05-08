@@ -2,8 +2,9 @@
   width: 200px;
   height: 100%;
   padding: 10px;
-  margin-left: 2%;
+  margin-left: 1%;
   background-color: #444;
+  border: 1px solid rgb(97, 96, 96);
 }
 
 #menu > h3 {
