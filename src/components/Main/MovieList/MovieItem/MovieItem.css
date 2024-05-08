@@ -1,14 +1,15 @@
 .movie-item {
   background-color: #ebe6d9;
-  border: 1px solid black;
+  border: 1px solid gray;
   margin-bottom: 10px;
-  min-width: 200px;
-  max-width: 330px;
+  min-width: 430px;
+  max-width: 700px;
   height: 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 5px;
+  color: black;
 }
 
 .delete-btn {
@@ -19,11 +20,16 @@
   display: inline-block;
   background-color: rgba(255, 0, 0, 0.562);
   color: white;
+  text-align: center;
 }
 
 .content {
-  min-width: 150px;
+  min-width: 650px;
   margin-right: 10px;
   font-size: 20px;
   text-align: left;
+}
+
+.movie-item.edit-now {
+  background-color: #ebd396;
 }

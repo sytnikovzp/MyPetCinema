@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   selectMovie,
   deleteMovieAction,
@@ -10,6 +11,12 @@ function MovieItem({ movie }) {
   const dispatch = useDispatch();
 
   const { id, fName, lName } = movie;
+  const currentMovie = useSelector((state) => state.currentMovie);
+  const [currMovie, setCurrMovie] = useState(currentMovie);
+
+  useEffect(() => {
+    setCurrMovie(currentMovie);
+  }, [currentMovie]);
 
   const onMovieEdit = () => {
     dispatch(selectMovie(movie));
@@ -21,7 +28,10 @@ function MovieItem({ movie }) {
   };
 
   return (
-    <div className={'movie-item'} onDoubleClick={onMovieEdit}>
+    <div
+      className={'movie-item ' + (id === currMovie.id ? 'edit-now' : '')}
+      onDoubleClick={onMovieEdit}
+    >
       <p className='content'>
         {fName} {lName}
       </p>

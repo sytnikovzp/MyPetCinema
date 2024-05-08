@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
+  addNewMovie,
   createMovieAction,
   updateMovieAction,
   deleteMovieAction,
@@ -33,6 +34,10 @@ function Aside() {
     });
   };
 
+  const onNewMovie = () => {
+    dispatch(addNewMovie());
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (movie.id) {
@@ -49,6 +54,7 @@ function Aside() {
   return (
     <form id='movie-form' onSubmit={onFormSubmit}>
       <div id='wrapper-form'>
+        <h3>Service</h3>
         <div className='movie-form-item'>
           <input
             type='text'
@@ -104,6 +110,10 @@ function Aside() {
       </div>
 
       <div className='btn-form-block'>
+        <button className='btn' id='new-btn' onClick={onNewMovie}>
+          New
+        </button>
+
         <button type='submit' id='save-btn' className='btn'>
           Save
         </button>
