@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import './MovieItem.css';
+import './MoviePage.css';
 
-export class MovieItem extends Component {
+export class MoviePage extends Component {
   render() {
     // const actors = this.props.actors;
     return (
@@ -67,4 +67,4 @@ export class MovieItem extends Component {
   }
 }
 
-export default MovieItem;
+export default MoviePage;

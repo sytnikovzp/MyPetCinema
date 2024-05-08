@@ -1,12 +1,13 @@
-import MovieItem from './MovieItem/MovieItem';
+import MoviePage from './MoviePage/MoviePage';
+import MovieList from './MovieList/MovieList'
 import './Main.css';
 
 function Main() {
-  // const actors = this.props.actors;
 
   return (
     <div id='main'>
-      <MovieItem />
+      {/* <MoviePage /> */}
+      <MovieList />
     </div>
   );
 }
