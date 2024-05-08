@@ -1,6 +1,5 @@
 import MoviePage from './MoviePage/MoviePage';
 import MovieList from './MovieList/MovieList'
-import MovieForm from './MovieList/MovieForm/MovieForm'
 import './Main.css';
 
 function Main() {
@@ -9,7 +8,6 @@ function Main() {
     <div id='main'>
       {/* <MoviePage /> */}
       <MovieList />
-      <MovieForm />
     </div>
   );
 }

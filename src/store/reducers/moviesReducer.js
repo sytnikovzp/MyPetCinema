@@ -2,70 +2,99 @@ import { moviesState } from '../../model/initialStates';
 import ACTION_TYPES from '../actions/actionTypes';
 
 const initialState = {
-  movies: moviesState,
-  isFetching: false,
+  arrMovies: moviesState,
+  currentMovie: createEmptyMovie(),
+  isPending: false,
   error: null,
 };
 
-export default function moviesReducer(state = initialState, { type, payload }) {
+export default function moviesReducer(
+  state = initialState,
+  { type, payload }
+) {
   switch (type) {
     // Success
-    case ACTION_TYPES.POST_MOVIE_SUCCESS:
+    case ACTION_TYPES.POST_CONTACT_SUCCESS:
       return {
         ...state,
-        movies: [...state.movies, payload],
-        isFetching: false,
+        arrMovies: [...state.arrMovies, payload],
+        currentMovie: createEmptyMovie(),
+        isPending: false,
       };
 
-    case ACTION_TYPES.DELETE_MOVIE_SUCCESS:
+    case ACTION_TYPES.PUT_CONTACT_SUCCESS:
       return {
         ...state,
-        movies: [...state.movies.filter((movie) => movie.id !== payload)],
-        isFetching: false,
-      };
-
-    case ACTION_TYPES.PUT_MOVIE_SUCCESS:
-      return {
-        ...state,
-        movies: [
-          ...state.movies.map((movie) =>
-            movie.id === payload.id
-              ? { ...movie, isDone: !movie.isDone }
-              : movie
+        arrMovies: [
+          ...state.arrMovies.map((movie) =>
+            movie.id !== payload.id ? movie : payload
           ),
         ],
-        isFetching: false,
+        isPending: false,
       };
 
-    case ACTION_TYPES.GET_MOVIES_SUCCESS:
+    case ACTION_TYPES.DELETE_CONTACT_SUCCESS:
       return {
         ...state,
-        movies: payload,
-        isFetching: false,
+        arrMovies: [
+          ...state.arrMovies.filter((movie) => movie.id !== payload),
+        ],
+        currentMovie: createEmptyMovie(),
+        isPending: false,
+      };
+
+    case ACTION_TYPES.GET_CONTACTS_SUCCESS:
+      return {
+        ...state,
+        arrMovies: payload,
+        isPending: false,
       };
 
     // Requesting
-    case ACTION_TYPES.POST_MOVIE_REQUEST:
-    case ACTION_TYPES.DELETE_MOVIE_REQUEST:
-    case ACTION_TYPES.PUT_MOVIE_REQUEST:
-    case ACTION_TYPES.GET_MOVIES_REQUEST:
+    case ACTION_TYPES.POST_CONTACT_REQUEST:
+    case ACTION_TYPES.PUT_CONTACT_REQUEST:
+    case ACTION_TYPES.DELETE_CONTACT_REQUEST:
+    case ACTION_TYPES.GET_CONTACTS_REQUEST:
       return {
         ...state,
-        isFetching: true,
+        isPending: true,
       };
 
     // Error
-    case ACTION_TYPES.POST_MOVIE_ERROR:
-    case ACTION_TYPES.DELETE_MOVIE_ERROR:
-    case ACTION_TYPES.PUT_MOVIE_ERROR:
-    case ACTION_TYPES.GET_MOVIES_ERROR:
+    case ACTION_TYPES.POST_CONTACT_ERROR:
+    case ACTION_TYPES.PUT_CONTACT_ERROR:
+    case ACTION_TYPES.DELETE_CONTACT_ERROR:
+    case ACTION_TYPES.GET_CONTACTS_ERROR:
       return {
         ...state,
-        isFetching: false,
+        isPending: false,
         error: payload,
+      };
+
+    // Other
+    case ACTION_TYPES.SELECT_CONTACT:
+      return {
+        ...state,
+        currentMovie: payload,
+      };
+
+    case ACTION_TYPES.ADD_NEW_CONTACT:
+      return {
+        ...state,
+        currentMovie: createEmptyMovie(),
       };
 
     default:
       return state;
   }
+}
+
+function createEmptyMovie() {
+  return {
+    id: null,
+    fName: '',
+    lName: '',
+    eMail: '',
+    cPhone: '',
+  };
 }

@@ -1,49 +1,41 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
-  toggleMovieAction,
-  delMovieAction,
+  selectMovie,
+  deleteMovieAction,
 } from '../../../../store/actions/movieActions';
 import './MovieItem.css';
 
-const divStyles = {
-  color: 'white',
-};
-
-function toggleBackground(movie) {
-  return {
-    ...divStyles,
-    backgroundColor: movie.isDone ? 'cadetblue' : 'darkgoldenrod',
-  };
-}
-
-export const MovieItem = ({ movie }) => {
+function MovieItem({ movie }) {
   const dispatch = useDispatch();
 
-  const { id, title, director } = movie;
+  const { id, fName, lName } = movie;
 
-  const onMovieDelete = (event) => {
-    event.stopPropagation();
-    dispatch(delMovieAction(id));
+  const onMovieEdit = () => {
+    dispatch(selectMovie(movie));
   };
 
-  const onMovieToggle = () => {
-    dispatch(toggleMovieAction({ ...movie, isDone: !movie.isDone }));
+  const onItemDelete = (event) => {
+    event.stopPropagation();
+    dispatch(deleteMovieAction(id));
   };
 
   return (
-    <div
-      className='movie-item'
-      style={toggleBackground(movie)}
-      onClick={onMovieToggle}
-    >
+    <div className={'movie-item'} onDoubleClick={onMovieEdit}>
       <p className='content'>
-        {title} directed by {director}
+        {fName} {lName}
       </p>
-      <span className='delete-btn' onClick={onMovieDelete}>
+      <span className='delete-btn' onClick={onItemDelete}>
         X
       </span>
     </div>
   );
+}
+
+MovieItem.propTypes = {
+  movie: PropTypes.object,
+  onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
 };
 
 export default MovieItem;

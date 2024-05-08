@@ -1,7 +1,4 @@
-import { takeLatest, 
-  // takeEvery, 
-  // takeLeading 
-} from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 import ACTION_TYPES from '../store/actions/actionTypes';
 import {
   getMoviesSaga,
@@ -11,10 +8,10 @@ import {
 } from './movieSagas';
 
 function* rootSaga() {
-  yield takeLatest(ACTION_TYPES.GET_MOVIES_ACTION, getMoviesSaga);
-  yield takeLatest(ACTION_TYPES.POST_MOVIE_ACTION, createMovieSaga);
-  yield takeLatest(ACTION_TYPES.PUT_MOVIE_ACTION, updateMovieSaga);
-  yield takeLatest(ACTION_TYPES.DELETE_MOVIE_ACTION, deleteMovieSaga);
+  yield takeLatest(ACTION_TYPES.GET_CONTACTS_ACTION, getMoviesSaga);
+  yield takeLatest(ACTION_TYPES.POST_CONTACT_ACTION, createMovieSaga);
+  yield takeLatest(ACTION_TYPES.PUT_CONTACT_ACTION, updateMovieSaga);
+  yield takeLatest(ACTION_TYPES.DELETE_CONTACT_ACTION, deleteMovieSaga);
 }
 
 export default rootSaga;

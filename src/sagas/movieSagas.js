@@ -2,18 +2,18 @@ import { put } from 'redux-saga/effects';
 import api from '../api/movie-service';
 
 import {
+  createMovieRequest,
+  createMovieSuccess,
+  createMovieError,
+  updateMovieRequest,
+  updateMovieSuccess,
+  updateMovieError,
+  deleteMovieRequest,
+  deleteMovieSuccess,
+  deleteMovieError,
   getMoviesRequest,
   getMoviesSuccess,
   getMoviesError,
-  addMovieRequest,
-  addMovieSuccess,
-  addMovieError,
-  toggleMovieRequest,
-  toggleMovieSuccess,
-  toggleMovieError,
-  delMovieRequest,
-  delMovieSuccess,
-  delMovieError,
 } from '../store/actions/movieActions';
 
 export function* getMoviesSaga() {
@@ -27,35 +27,35 @@ export function* getMoviesSaga() {
 }
 
 export function* createMovieSaga({ payload }) {
-  yield put(addMovieRequest());
+  yield put(createMovieRequest());
   try {
-    const newMovie = yield api.post('/movies', payload).then(({ data }) => data);
-    yield put(addMovieSuccess(newMovie));
+    const newMovie = yield api
+      .post('/movies', payload)
+      .then(({ data }) => data);
+    yield put(createMovieSuccess(newMovie));
   } catch (error) {
-    yield put(addMovieError(error));
+    yield put(createMovieError(error));
   }
 }
 
 export function* updateMovieSaga({ payload }) {
-  yield put(toggleMovieRequest());
+  yield put(updateMovieRequest());
   try {
     const updatedMovie = yield api
       .put(`/movies/${payload.id}`, payload)
       .then(({ data }) => data);
-    yield put(toggleMovieSuccess(updatedMovie));
+    yield put(updateMovieSuccess(updatedMovie));
   } catch (error) {
-    yield put(toggleMovieError(error));
+    yield put(updateMovieError(error));
   }
 }
 
 export function* deleteMovieSaga({ payload }) {
-  yield put(delMovieRequest());
+  yield put(deleteMovieRequest());
   try {
-    yield api
-      .delete(`/movies/${payload}`)
-      // .then(({ statusText }) => console.log(statusText));
-    yield put(delMovieSuccess(payload));
+    yield api.delete(`/movies/${payload}`);
+    yield put(deleteMovieSuccess(payload));
   } catch (error) {
-    yield put(delMovieError(error));
+    yield put(deleteMovieError(error));
   }
 }

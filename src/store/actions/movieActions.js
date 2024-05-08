@@ -1,85 +1,85 @@
 import ACTION_TYPES from './actionTypes';
 
 // Creating
-export const addMovieAction = (movie) => {
+export const createMovieAction = (movie) => {
   return {
-    type: ACTION_TYPES.POST_MOVIE_ACTION,
+    type: ACTION_TYPES.POST_CONTACT_ACTION,
     payload: movie,
   };
 };
 
-export const addMovieRequest = () => {
+export const createMovieRequest = () => {
   return {
-    type: ACTION_TYPES.POST_MOVIE_REQUEST,
+    type: ACTION_TYPES.POST_CONTACT_REQUEST,
   };
 };
 
-export const addMovieSuccess = (movie) => {
+export const createMovieSuccess = (movie) => {
   return {
-    type: ACTION_TYPES.POST_MOVIE_SUCCESS,
+    type: ACTION_TYPES.POST_CONTACT_SUCCESS,
     payload: movie,
   };
 };
 
-export const addMovieError = (error) => {
+export const createMovieError = (error) => {
   return {
-    type: ACTION_TYPES.POST_MOVIE_ERROR,
-    payload: error,
-  };
-};
-
-// Deleting
-export const delMovieAction = (id) => {
-  return {
-    type: ACTION_TYPES.DELETE_MOVIE_ACTION,
-    payload: id,
-  };
-};
-
-export const delMovieRequest = () => {
-  return {
-    type: ACTION_TYPES.DELETE_MOVIE_REQUEST,
-  };
-};
-
-export const delMovieSuccess = (payload) => {
-  return {
-    type: ACTION_TYPES.DELETE_MOVIE_SUCCESS,
-    payload,
-  };
-};
-
-export const delMovieError = (error) => {
-  return {
-    type: ACTION_TYPES.DELETE_MOVIE_ERROR,
+    type: ACTION_TYPES.POST_CONTACT_ERROR,
     payload: error,
   };
 };
 
 // Updating
-export const toggleMovieAction = (movie) => {
+export const updateMovieAction = (movie) => {
   return {
-    type: ACTION_TYPES.PUT_MOVIE_ACTION,
+    type: ACTION_TYPES.PUT_CONTACT_ACTION,
     payload: movie,
   };
 };
 
-export const toggleMovieRequest = () => {
+export const updateMovieRequest = () => {
   return {
-    type: ACTION_TYPES.PUT_MOVIE_REQUEST,
+    type: ACTION_TYPES.PUT_CONTACT_REQUEST,
   };
 };
 
-export const toggleMovieSuccess = (movie) => {
+export const updateMovieSuccess = (movie) => {
   return {
-    type: ACTION_TYPES.PUT_MOVIE_SUCCESS,
+    type: ACTION_TYPES.PUT_CONTACT_SUCCESS,
     payload: movie,
   };
 };
 
-export const toggleMovieError = (error) => {
+export const updateMovieError = (error) => {
   return {
-    type: ACTION_TYPES.PUT_MOVIE_ERROR,
+    type: ACTION_TYPES.PUT_CONTACT_ERROR,
+    payload: error,
+  };
+};
+
+// Deleting
+export const deleteMovieAction = (id) => {
+  return {
+    type: ACTION_TYPES.DELETE_CONTACT_ACTION,
+    payload: id,
+  };
+};
+
+export const deleteMovieRequest = () => {
+  return {
+    type: ACTION_TYPES.DELETE_CONTACT_REQUEST,
+  };
+};
+
+export const deleteMovieSuccess = (payload) => {
+  return {
+    type: ACTION_TYPES.DELETE_CONTACT_SUCCESS,
+    payload,
+  };
+};
+
+export const deleteMovieError = (error) => {
+  return {
+    type: ACTION_TYPES.DELETE_CONTACT_ERROR,
     payload: error,
   };
 };
@@ -87,26 +87,40 @@ export const toggleMovieError = (error) => {
 // Getting
 export const getMoviesAction = () => {
   return {
-    type: ACTION_TYPES.GET_MOVIES_ACTION,
+    type: ACTION_TYPES.GET_CONTACTS_ACTION,
   };
 };
 
 export const getMoviesRequest = () => {
   return {
-    type: ACTION_TYPES.GET_MOVIES_REQUEST,
+    type: ACTION_TYPES.GET_CONTACTS_REQUEST,
   };
 };
 
 export const getMoviesSuccess = (movies) => {
   return {
-    type: ACTION_TYPES.GET_MOVIES_SUCCESS,
+    type: ACTION_TYPES.GET_CONTACTS_SUCCESS,
     payload: movies,
   };
 };
 
 export const getMoviesError = (error) => {
   return {
-    type: ACTION_TYPES.GET_MOVIES_ERROR,
+    type: ACTION_TYPES.GET_CONTACTS_ERROR,
     payload: error,
+  };
+};
+
+// Other
+export const selectMovie = (movie) => {
+  return {
+    type: ACTION_TYPES.SELECT_CONTACT,
+    payload: movie,
+  };
+};
+
+export const addNewMovie = () => {
+  return {
+    type: ACTION_TYPES.ADD_NEW_CONTACT,
   };
 };

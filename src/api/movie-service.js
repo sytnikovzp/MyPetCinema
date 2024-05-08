@@ -3,5 +3,5 @@ import { BASE_URL } from '../constants/constants';
 
 export default axios.create({
   baseURL: BASE_URL,
-  headers: { 'Content-Type': 'application/json' },
+  headers: {'Content-Type': 'application/json'},
 });

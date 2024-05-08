@@ -1,24 +1,29 @@
 .movie-item {
+  background-color: #ebe6d9;
   border: 1px solid black;
-  margin: 10px;
-  min-width: 500px;
-  max-width: 600px;
-  min-height: 30px;
+  margin-bottom: 10px;
+  min-width: 200px;
+  max-width: 330px;
+  height: 35px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
 }
 
 .delete-btn {
   border: 1px solid black;
-  min-height: 40px;
-  min-width: 40px;
-  text-align: center;
-  margin: auto;
+  min-height: 25px;
+  min-width: 25px;
+  margin-right: 5px;
   display: inline-block;
-  padding-top: 10px;
+  background-color: rgba(255, 0, 0, 0.562);
+  color: white;
 }
+
 .content {
-  min-width: 400px;
-  margin-right: 50px;
+  min-width: 150px;
+  margin-right: 10px;
   font-size: 20px;
+  text-align: left;
 }

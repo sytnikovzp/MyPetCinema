@@ -1,28 +1,32 @@
 {
   "movies": [
     {
-      "title": "BTTF",
-      "director": "Zemekis",
-      "isDone": true,
-      "id": 1
+      "id": 1,
+      "fName": "Александрdfg",
+      "lName": "Ситников",
+      "eMail": "sytnikov.zp@gmail.com",
+      "cPhone": "0976993354"
     },
     {
-      "title": "dfgsdfg",
-      "director": "ddfg",
-      "isDone": false,
-      "id": 2
+      "id": 2,
+      "fName": "Надежда",
+      "lName": "Ситникова",
+      "eMail": "tester@gmail.com",
+      "cPhone": "0976996744"
     },
     {
-      "title": "",
-      "director": "",
-      "isDone": true,
-      "id": 3
+      "id": 3,
+      "fName": "Иван",
+      "lName": "Иванов",
+      "eMail": "",
+      "cPhone": "0449379992"
     },
     {
-      "title": "sfsd",
-      "director": "sdfsdf",
-      "isDone": false,
-      "id": 4
+      "id": 5,
+      "fName": "Арина",
+      "lName": "Ситникова",
+      "eMail": "",
+      "cPhone": "0612397879"
     }
   ]
 }

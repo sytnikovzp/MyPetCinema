@@ -38,8 +38,8 @@ class App extends React.Component {
         <Header movies={this.state.movies} />
         <div id='wrapper'>
           <Menu />
-          <Main actors={this.state.actors} />
-          {/* <Aside /> */}
+          <Main />
+          <Aside />
         </div>
         <Footer movieStudio={this.state.movieStudio} />
       </>
