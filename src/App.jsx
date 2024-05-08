@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <>
         <Header movies={this.state.movies} />
-        <div id='container'>
+        <div id='wrapper'>
           <Menu />
           <Main actors={this.state.actors} />
           <Aside />
