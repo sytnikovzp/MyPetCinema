@@ -19,7 +19,7 @@ import {
 export function* getMoviesSaga() {
   yield put(getMoviesRequest());
   try {
-    const movies = yield api.get('/watch').then(({ data }) => data);
+    const movies = yield api.get('/movies').then(({ data }) => data);
     yield put(getMoviesSuccess(movies));
   } catch (error) {
     yield put(getMoviesError(error));
@@ -29,7 +29,7 @@ export function* getMoviesSaga() {
 export function* createMovieSaga({ payload }) {
   yield put(addMovieRequest());
   try {
-    const newMovie = yield api.post('/watch', payload).then(({ data }) => data);
+    const newMovie = yield api.post('/movies', payload).then(({ data }) => data);
     yield put(addMovieSuccess(newMovie));
   } catch (error) {
     yield put(addMovieError(error));
@@ -40,7 +40,7 @@ export function* updateMovieSaga({ payload }) {
   yield put(toggleMovieRequest());
   try {
     const updatedMovie = yield api
-      .put(`/watch/${payload.id}`, payload)
+      .put(`/movies/${payload.id}`, payload)
       .then(({ data }) => data);
     yield put(toggleMovieSuccess(updatedMovie));
   } catch (error) {
@@ -52,7 +52,7 @@ export function* deleteMovieSaga({ payload }) {
   yield put(delMovieRequest());
   try {
     yield api
-      .delete(`/watch/${payload}`)
+      .delete(`/movies/${payload}`)
       // .then(({ statusText }) => console.log(statusText));
     yield put(delMovieSuccess(payload));
   } catch (error) {

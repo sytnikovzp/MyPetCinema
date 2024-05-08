@@ -16,11 +16,11 @@ function MovieList() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className='list'>
       {movies.map((movie) => {
         return <MovieItem key={movie.id} movie={movie} />;
       })}
-    </>
+    </div>
   );
 }
 

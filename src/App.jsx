@@ -39,7 +39,7 @@ class App extends React.Component {
         <div id='wrapper'>
           <Menu />
           <Main actors={this.state.actors} />
-          <Aside />
+          {/* <Aside /> */}
         </div>
         <Footer movieStudio={this.state.movieStudio} />
       </>
