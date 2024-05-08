@@ -14,7 +14,7 @@ export default function moviesReducer(
 ) {
   switch (type) {
     // Success
-    case ACTION_TYPES.POST_CONTACT_SUCCESS:
+    case ACTION_TYPES.POST_MOVIE_SUCCESS:
       return {
         ...state,
         arrMovies: [...state.arrMovies, payload],
@@ -22,7 +22,7 @@ export default function moviesReducer(
         isPending: false,
       };
 
-    case ACTION_TYPES.PUT_CONTACT_SUCCESS:
+    case ACTION_TYPES.PUT_MOVIE_SUCCESS:
       return {
         ...state,
         arrMovies: [
@@ -33,7 +33,7 @@ export default function moviesReducer(
         isPending: false,
       };
 
-    case ACTION_TYPES.DELETE_CONTACT_SUCCESS:
+    case ACTION_TYPES.DELETE_MOVIE_SUCCESS:
       return {
         ...state,
         arrMovies: [
@@ -43,7 +43,7 @@ export default function moviesReducer(
         isPending: false,
       };
 
-    case ACTION_TYPES.GET_CONTACTS_SUCCESS:
+    case ACTION_TYPES.GET_MOVIES_SUCCESS:
       return {
         ...state,
         arrMovies: payload,
@@ -51,20 +51,20 @@ export default function moviesReducer(
       };
 
     // Requesting
-    case ACTION_TYPES.POST_CONTACT_REQUEST:
-    case ACTION_TYPES.PUT_CONTACT_REQUEST:
-    case ACTION_TYPES.DELETE_CONTACT_REQUEST:
-    case ACTION_TYPES.GET_CONTACTS_REQUEST:
+    case ACTION_TYPES.POST_MOVIE_REQUEST:
+    case ACTION_TYPES.PUT_MOVIE_REQUEST:
+    case ACTION_TYPES.DELETE_MOVIE_REQUEST:
+    case ACTION_TYPES.GET_MOVIES_REQUEST:
       return {
         ...state,
         isPending: true,
       };
 
     // Error
-    case ACTION_TYPES.POST_CONTACT_ERROR:
-    case ACTION_TYPES.PUT_CONTACT_ERROR:
-    case ACTION_TYPES.DELETE_CONTACT_ERROR:
-    case ACTION_TYPES.GET_CONTACTS_ERROR:
+    case ACTION_TYPES.POST_MOVIE_ERROR:
+    case ACTION_TYPES.PUT_MOVIE_ERROR:
+    case ACTION_TYPES.DELETE_MOVIE_ERROR:
+    case ACTION_TYPES.GET_MOVIES_ERROR:
       return {
         ...state,
         isPending: false,
@@ -72,13 +72,13 @@ export default function moviesReducer(
       };
 
     // Other
-    case ACTION_TYPES.SELECT_CONTACT:
+    case ACTION_TYPES.SELECT_MOVIE:
       return {
         ...state,
         currentMovie: payload,
       };
 
-    case ACTION_TYPES.ADD_NEW_CONTACT:
+    case ACTION_TYPES.ADD_NEW_MOVIE:
       return {
         ...state,
         currentMovie: createEmptyMovie(),
