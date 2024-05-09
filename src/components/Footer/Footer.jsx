@@ -25,7 +25,7 @@ export class Footer extends Component {
               <i className='fa fa-envelope' aria-hidden='true'></i>
             </div>
             <div className='text-footer'>
-              <span>Country режисёра</span>
+              <span>E-mail режисёра</span>
               <p>
                 <a href={'mailto:' + movieStudio[1]}>{movieStudio[1]}</a>
               </p>

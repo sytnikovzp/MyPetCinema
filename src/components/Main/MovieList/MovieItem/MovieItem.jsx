@@ -10,7 +10,7 @@ import './MovieItem.css';
 function MovieItem({ movie }) {
   const dispatch = useDispatch();
 
-  const { id, movieTitle, directorName, releaseYear } = movie;
+  const { id, movieTitle, directorsList, releaseYear } = movie;
   const currentMovie = useSelector((state) => state.currentMovie);
   const [currMovie, setCurrMovie] = useState(currentMovie);
 
@@ -33,7 +33,7 @@ function MovieItem({ movie }) {
       onDoubleClick={onMovieEdit}
     >
       <p className='content'>
-        {movieTitle} directed by {directorName} was released in {releaseYear} year
+        {movieTitle} directed by {directorsList} was released in {releaseYear} year
       </p>
       <span className='delete-btn' onClick={onItemDelete}>
         X

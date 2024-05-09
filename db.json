@@ -1,25 +1,17 @@
 {
   "movies": [
     {
-      "id": 6,
-      "movieTitle": "Indiana Johns",
-      "directorName": "Stiven Spilberg",
-      "countryName": "USA",
-      "releaseYear": "1984"
-    },
-    {
-      "id": 7,
-      "movieTitle": "Lord of the rings",
-      "directorName": "Peter Jackson",
-      "countryName": "New Zealand",
-      "releaseYear": "2001"
-    },
-    {
       "id": 8,
-      "movieTitle": "Гладиатор",
-      "directorName": "Ридли Скотт",
-      "countryName": "Great Britain",
-      "releaseYear": "2000"
+      "movieTitle": "Сердце из стали",
+      "moviePosterURL": "https://thumbs.dfs.ivi.ru/storage15/contents/2/1/87ab2e86a75e2edb209e3467e225c4.jpg",
+      "movieLink": "https://www.youtube.com/watch?v=HMWZSYaRw8I",
+      "studioName": "Universal",
+      "movieGenreList": "action, thriller, fantasy",
+      "directorsList": "Zhang Lijia",
+      "actorsList": "Jackie Chan, Show Lo, Nana Ouyang, Erica Xiahou, Callan Mulvey",
+      "countryName": "Hong Kong, China",
+      "releaseYear": "2017",
+      "storyline": "Специальный агент Линь, защищая гениального ученого, разрабатывавшего биологическое оружие, от внезапного нападения вооруженной группы элитных наёмников, возглавляемых беглым биороидом, получает тяжелые ранения и чудом остаётся жив, благодаря своевременной медицинской помощи и передовым технологиям. И теперь, работая под прикрытием, наш герой должен стать незримым ангелом-хранителем для молодой девушки, которая в детстве, оставшись полной сиротой, стала невольной участницей уникального научного эксперимента."
     }
   ]
 }

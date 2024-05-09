@@ -52,9 +52,9 @@ function Aside() {
   };
 
   return (
-    <form id='movie-form' onSubmit={onFormSubmit}>
-      <div id='wrapper-form'>
-        <h3>Service</h3>
+    <div id='wrapper-form'>
+      <h3>Service</h3>
+      <form id='movie-form' onSubmit={onFormSubmit}>
         <div className='movie-form-item'>
           <input
             type='text'
@@ -68,19 +68,91 @@ function Aside() {
             X
           </span>
         </div>
+
         <div className='movie-form-item'>
           <input
             type='text'
-            name='directorName'
-            id='directorName'
-            placeholder='Director name'
-            value={movie.directorName}
+            name='moviePosterURL'
+            id='moviePosterURL'
+            placeholder='Movie poster URL'
+            value={movie.moviePosterURL}
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
             X
           </span>
         </div>
+
+        <div className='movie-form-item'>
+          <input
+            type='text'
+            name='movieLink'
+            id='movieLink'
+            placeholder='Movie link (URL)'
+            value={movie.movieLink}
+            onChange={onInputChange}
+          />
+          <span className='clear-btn' onClick={onInputClear}>
+            X
+          </span>
+        </div>
+
+        <div className='movie-form-item'>
+          <input
+            type='text'
+            name='studioName'
+            id='studioName'
+            placeholder='Film studio name'
+            value={movie.studioName}
+            onChange={onInputChange}
+          />
+          <span className='clear-btn' onClick={onInputClear}>
+            X
+          </span>
+        </div>
+
+        <div className='movie-form-item'>
+          <input
+            type='text'
+            name='movieGenreList'
+            id='movieGenreList'
+            placeholder='Movie genre list'
+            value={movie.movieGenreList}
+            onChange={onInputChange}
+          />
+          <span className='clear-btn' onClick={onInputClear}>
+            X
+          </span>
+        </div>
+
+        <div className='movie-form-item'>
+          <input
+            type='text'
+            name='directorsList'
+            id='directorsList'
+            placeholder='Directors list'
+            value={movie.directorsList}
+            onChange={onInputChange}
+          />
+          <span className='clear-btn' onClick={onInputClear}>
+            X
+          </span>
+        </div>
+
+        <div className='movie-form-item'>
+          <input
+            type='text'
+            name='actorsList'
+            id='actorsList'
+            placeholder='Actors list'
+            value={movie.actorsList}
+            onChange={onInputChange}
+          />
+          <span className='clear-btn' onClick={onInputClear}>
+            X
+          </span>
+        </div>
+
         <div className='movie-form-item'>
           <input
             type='text'
@@ -94,6 +166,7 @@ function Aside() {
             X
           </span>
         </div>
+
         <div className='movie-form-item'>
           <input
             type='text'
@@ -107,26 +180,41 @@ function Aside() {
             X
           </span>
         </div>
-      </div>
 
-      <div className='btn-form-block'>
-        <button className='btn' id='new-btn' onClick={onNewMovie}>
-          New
-        </button>
+        <div className='movie-form-item'>
+          <textarea
+            name='storyline'
+            id='storyline'
+            rows={3}
+            cols={80}
+            placeholder='Storyline movie...'
+            value={movie.storyline}
+            onChange={onInputChange}
+          />
+          <span className='clear-btn' onClick={onInputClear}>
+            X
+          </span>
+        </div>
 
-        <button type='submit' id='save-btn' className='btn'>
-          Save
-        </button>
-
-        {movie.id ? (
-          <button id='delButton' className='btn' onClick={onMovieDelete}>
-            Delete
+        <div className='btn-form-block'>
+          <button className='btn' id='new-btn' onClick={onNewMovie}>
+            New
           </button>
-        ) : (
-          ''
-        )}
-      </div>
-    </form>
+
+          <button type='submit' id='save-btn' className='btn'>
+            Save
+          </button>
+
+          {movie.id ? (
+            <button id='delButton' className='btn' onClick={onMovieDelete}>
+              Delete
+            </button>
+          ) : (
+            ''
+          )}
+        </div>
+      </form>
+    </div>
   );
 }
 

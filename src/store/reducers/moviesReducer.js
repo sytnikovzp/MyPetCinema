@@ -93,8 +93,14 @@ function createEmptyMovie() {
   return {
     id: null,
     movieTitle: '',
-    directorName: '',
+    moviePosterURL: '',
+    movieLink: '',
+    studioName: '',
+    movieGenreList: '',
+    directorsList: '',
+    actorsList: '',
     countryName: '',
     releaseYear: '',
+    storyline: '',
   };
 }
