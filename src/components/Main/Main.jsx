@@ -7,7 +7,7 @@ function Main() {
   return (
     <div id='main'>
       <MoviePage />
-      {/* <MovieList /> */}
+      <MovieList />
     </div>
   );
 }

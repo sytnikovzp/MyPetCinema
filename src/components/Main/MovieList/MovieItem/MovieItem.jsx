@@ -11,6 +11,7 @@ function MovieItem({ movie }) {
   const dispatch = useDispatch();
 
   const { id, movieTitle, directorsList, releaseYear } = movie;
+  
   const currentMovie = useSelector((state) => state.currentMovie);
   const [currMovie, setCurrMovie] = useState(currentMovie);
 

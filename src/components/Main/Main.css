@@ -1,6 +1,7 @@
 #main {
   width: 800px;
-  height: 650px;
+  /* height: 650px; */
+  height: 100%;
   margin-left: 225px;
   margin-right: 1%;
   margin-bottom: 5%;
