@@ -3,7 +3,6 @@ import './Header.css';
 
 export class Header extends Component {
   render() {
-    const movies = this.props.movies;
     return (
       <>
         <div id='header'>
@@ -13,13 +12,7 @@ export class Header extends Component {
           <h2>Сегодня в прокате:</h2>
           <ul>
             <li>
-              {movies.map((movie) => {
-                return (
-                  <a href='#' key={movie}>
-                    {movie}
-                  </a>
-                );
-              })}
+              <a href='#'>Сердце из стали</a>
             </li>
           </ul>
         </div>

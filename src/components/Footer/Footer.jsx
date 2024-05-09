@@ -3,7 +3,6 @@ import './Footer.css';
 
 export class Footer extends Component {
   render() {
-    const movieStudio = this.props.movieStudio;
     return (
       <>
         <div id='footer'>
@@ -15,7 +14,7 @@ export class Footer extends Component {
               <span>Адрес киностудии</span>
               <p>
                 <a href='https://maps.app.goo.gl/c8b7NSXnsYFPatBZ9'>
-                  {movieStudio[0]}
+                  г. Киев ул. Закревского, 22
                 </a>
               </p>
             </div>
@@ -27,7 +26,7 @@ export class Footer extends Component {
             <div className='text-footer'>
               <span>E-mail режисёра</span>
               <p>
-                <a href={'mailto:' + movieStudio[1]}>{movieStudio[1]}</a>
+                <a href={'mailto:' + 'faculty@film.ua'}>faculty@film.ua</a>
               </p>
             </div>
           </div>
@@ -38,7 +37,7 @@ export class Footer extends Component {
             <div className='text-footer'>
               <span>Телефон автора сайта</span>
               <p>
-                <a href={'tel:' + movieStudio[2]}>{movieStudio[2]}</a>
+                <a href={'tel:' + '+38 044 459 46 10'}>+38 044 459 46 10</a>
               </p>
             </div>
           </div>
