@@ -1,0 +1,5 @@
+#movie-player{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

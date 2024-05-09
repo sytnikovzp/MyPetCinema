@@ -1,9 +1,12 @@
-import './MoviePlayer.css'
+import ReactPlayer from 'react-player/youtube';
+import './MoviePlayer.css';
 
-function MoviePlayer() {
+function MoviePlayer({ movieLink }) {
   return (
-    <div>MoviePlayer</div>
-  )
+    <div id='movie-player'>
+      <ReactPlayer url={movieLink} controls />
+    </div>
+  );
 }
 
-export default MoviePlayer
+export default MoviePlayer;

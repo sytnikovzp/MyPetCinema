@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import MoviePlayer from './MoviePlayer/MoviePlayer';
 import './MoviePage.css';
 
 function MoviePage() {
@@ -13,6 +14,7 @@ function MoviePage() {
   const {
     movieTitle,
     moviePosterURL,
+    movieLink,
     studioName,
     movieGenreList,
     directorsList,
@@ -65,6 +67,7 @@ function MoviePage() {
           </div>
         </div>
       </div>
+      <MoviePlayer movieLink={movieLink}/>
     </>
   );
 }
