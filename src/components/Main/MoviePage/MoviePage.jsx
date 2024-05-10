@@ -29,13 +29,22 @@ function MoviePage() {
       <div id='movie-item'>
         <div className='movie-name'>
           <h1>
-            {movieTitle}, {releaseYear}
+            {movieTitle ? movieTitle : 'NoName movie'}
+            {releaseYear ? ', ' + releaseYear : ''}
           </h1>
         </div>
         <div className='movie-container'>
           <div className='movie-information'>
             <div className='img-container'>
-              <img src={moviePosterURL} alt={movieTitle} className='poster' />
+              <img
+                src={
+                  moviePosterURL
+                    ? moviePosterURL
+                    : 'https://upload.wikimedia.org/wikipedia/commons/c/c2/No_image_poster.png'
+                }
+                alt={movieTitle ? movieTitle : 'NoName movie'}
+                className='poster'
+              />
             </div>
             <div className='info-container'>
               <div className='movie-info'>
@@ -44,30 +53,29 @@ function MoviePage() {
                   <p>Студия:</p>
                   <p>Режисёр:</p>
                   <p>Жанр:</p>
-                  <p>Год выпуска:</p>
-                  <p>Перечень актеров:</p>
+                  <p>Год:</p>
+                  <p>Актеры:</p>
                 </div>
                 <div className='data-column'>
-                  <p>{countryName}</p>
-                  <p>{studioName}</p>
-                  <p>{directorsList}</p>
-                  <p>{movieGenreList}</p>
-                  <p>{releaseYear}</p>
+                  <p>{countryName ? countryName : 'Unknown'}</p>
+                  <p>{studioName ? studioName : 'Unknown'}</p>
+                  <p>{directorsList ? directorsList : 'Unknown'}</p>
+                  <p>{movieGenreList ? movieGenreList : 'Unknown'}</p>
+                  <p>{releaseYear ? releaseYear : 'Unknown'}</p>
                   <p>
-                    {actorsList}
-                    <span> и другие.</span>
+                    {actorsList ? actorsList + ' и другие.' : 'Unknown'}
                   </p>
                 </div>
               </div>
               <div className='storyline-container'>
                 <p className='bold'>Cюжет:</p>
-                <p>{storyline}</p>
+                <p>{storyline ? storyline : 'Unknown'}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <MoviePlayer movieLink={movieLink}/>
+      <MoviePlayer movieLink={movieLink} />
     </>
   );
 }
