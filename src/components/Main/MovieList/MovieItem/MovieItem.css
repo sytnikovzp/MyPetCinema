@@ -49,7 +49,7 @@
 }
 
 .item-button {
-  border: 1px solid black;
+  border: 1px solid brown;
   height: 35px;
   width: 35px;
   background-color: rgba(255, 0, 0, 0.562);
@@ -74,6 +74,10 @@
   text-align: left;
 }
 
-.movie-item-wrapper.edit-now {
+.movie-item-wrapper:hover {
   background-color: #777;
+}
+
+.movie-item-wrapper.edit-now {
+  background-color: #888;
 }

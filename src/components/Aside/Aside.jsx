@@ -65,7 +65,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -79,7 +79,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -93,7 +93,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -107,7 +107,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -121,7 +121,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -135,7 +135,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -149,7 +149,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -163,7 +163,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -177,7 +177,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
@@ -192,7 +192,7 @@ function Aside() {
             onChange={onInputChange}
           />
           <span className='clear-btn' onClick={onInputClear}>
-            X
+            <i className='fa fa-times' aria-hidden='true'></i>
           </span>
         </div>
 
