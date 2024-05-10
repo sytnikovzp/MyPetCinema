@@ -23,7 +23,7 @@ function Header() {
             {movies.map((movie) => {
               return (
                 <a href={movie.id} key={movie.id}>
-                  {movie.movieTitle}
+                  {movie.movieTitle ? movie.movieTitle : 'NoName movie'}
                 </a>
               );
             })}
