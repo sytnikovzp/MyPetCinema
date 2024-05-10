@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import MovieItem from './MovieItem/MovieItem';
 import { getMoviesAction } from '../../../store/actions/movieActions';
 import './MovieList.css';
@@ -25,13 +24,5 @@ function MovieList() {
     </div>
   );
 }
-
-MovieList.propTypes = {
-  movies: PropTypes.array,
-};
-
-MovieList.defaultProps = {
-  movies: [],
-};
 
 export default MovieList;
