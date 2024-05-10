@@ -1,5 +1,10 @@
-.movie-name > h1 {
+#movie-page-wrapper {
   margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 500px;
+}
+
+.movie-name > h1 {
   color: white;
 }
 

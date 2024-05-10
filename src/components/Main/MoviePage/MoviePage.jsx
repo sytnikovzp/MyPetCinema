@@ -25,7 +25,7 @@ function MoviePage() {
   } = currMovie;
 
   return (
-    <>
+    <div id='movie-page-wrapper'>
       <div id='movie-item'>
         <div className='movie-name'>
           <h1>
@@ -62,9 +62,7 @@ function MoviePage() {
                   <p>{directorsList ? directorsList : 'Unknown'}</p>
                   <p>{movieGenreList ? movieGenreList : 'Unknown'}</p>
                   <p>{releaseYear ? releaseYear : 'Unknown'}</p>
-                  <p>
-                    {actorsList ? actorsList + ' и другие.' : 'Unknown'}
-                  </p>
+                  <p>{actorsList ? actorsList + ' и другие.' : 'Unknown'}</p>
                 </div>
               </div>
               <div className='storyline-container'>
@@ -75,8 +73,8 @@ function MoviePage() {
           </div>
         </div>
       </div>
-      <MoviePlayer movieLink={movieLink} />
-    </>
+      {movieLink ? <MoviePlayer movieLink={movieLink} /> : ''}
+    </div>
   );
 }
 

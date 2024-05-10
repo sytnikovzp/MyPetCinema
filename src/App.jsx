@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <div id='wrapper'>
+        <div id='main-wrapper'>
           <Menu />
           <Main />
           <Aside />
