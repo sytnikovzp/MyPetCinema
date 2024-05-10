@@ -15,7 +15,7 @@ function MovieList() {
   }, [dispatch]);
 
   return (
-    <div id='wrapper-list'>
+    <div id='movie-list-wrapper'>
       <h3>Bestselling movies:</h3>
       <div id='movie-list'>
         {movies.map((movie) => {

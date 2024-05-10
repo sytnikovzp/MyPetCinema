@@ -1,15 +1,54 @@
-.movie-item {
-  background-color: #ebe6d9;
+.movie-item-wrapper {
+  /* background-color: #ebe6d9; */
+  background-color: #666;
   border: 1px solid gray;
   margin-bottom: 10px;
-  min-width: 500px;
-  max-width: 700px;
-  height: 35px;
+  /* min-width: 500px; */
+  /* max-width: 650px; */
+  width: 100%;
+  /* min-height: 120px; */
+  height: 165px;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: space-between;
-  padding-left: 5px;
-  color: black;
+  padding: 5px;
+  /* color: black; */
+}
+
+.movie-item-img-container {
+  padding-left: 10px;
+  height: 150px;
+}
+
+.movie-item-info-container > h3 {
+  margin-bottom: 5px;
+  color: white;
+  /* color: white; */
+}
+
+.movie-item-poster {
+  border: 1px solid #f7faff;
+  border-radius: 1%;
+  /* width: inherit; */
+  width: 100px;
+  height: 100%;
+}
+
+.movie-item-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.bold {
+  font-weight: bold;
+  color: white;
+}
+
+.movie-item-data-column {
+  /* border: 1px solid white; */
+
+  margin-left: 10px;
+  width: 400px;
 }
 
 .delete-btn {
@@ -30,6 +69,6 @@
   text-align: left;
 }
 
-.movie-item.edit-now {
-  background-color: #ebd396;
+.movie-item-wrapper.edit-now {
+  background-color: #777;
 }

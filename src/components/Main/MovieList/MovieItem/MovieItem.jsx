@@ -10,14 +10,22 @@ import './MovieItem.css';
 function MovieItem({ movie }) {
   const dispatch = useDispatch();
 
-  const { id, movieTitle, directorsList, releaseYear } = movie;
-  
   const currentMovie = useSelector((state) => state.currentMovie);
   const [currMovie, setCurrMovie] = useState(currentMovie);
 
   useEffect(() => {
     setCurrMovie(currentMovie);
   }, [currentMovie]);
+
+  const {
+    id,
+    movieTitle,
+    moviePosterURL,
+    movieGenreList,
+    directorsList,
+    countryName,
+    releaseYear,
+  } = movie;
 
   const onMovieEdit = () => {
     dispatch(selectMovie(movie));
@@ -30,12 +38,44 @@ function MovieItem({ movie }) {
 
   return (
     <div
-      className={'movie-item ' + (id === currMovie.id ? 'edit-now' : '')}
+      className={
+        'movie-item-wrapper ' + (id === currMovie.id ? 'edit-now' : '')
+      }
       onDoubleClick={onMovieEdit}
     >
-      <p className='content'>
+      {/* <p className='content'>
         {movieTitle} directed by {directorsList} was released in {releaseYear} year
-      </p>
+      </p> */}
+
+      <div className='movie-item-img-container'>
+        <img
+          src={
+            moviePosterURL
+              ? moviePosterURL
+              : 'https://upload.wikimedia.org/wikipedia/commons/c/c2/No_image_poster.png'
+          }
+          alt={movieTitle ? movieTitle : 'NoName movie'}
+          className='movie-item-poster'
+        />
+      </div>
+      <div className='movie-item-info-container'>
+          <h3>{movieTitle ? movieTitle : 'NoName movie'}</h3>
+        <div className='movie-item-info'>
+          <div className='bold'>
+            <p>Страна:</p>
+            <p>Режисёр:</p>
+            <p>Жанр:</p>
+            <p>Год:</p>
+          </div>
+          <div className='movie-item-data-column'>
+            <p>{countryName ? countryName : 'Unknown'}</p>
+            <p>{directorsList ? directorsList : 'Unknown'}</p>
+            <p>{movieGenreList ? movieGenreList : 'Unknown'}</p>
+            <p>{releaseYear ? releaseYear : 'Unknown'}</p>
+          </div>
+        </div>
+      </div>
+
       <span className='delete-btn' onClick={onItemDelete}>
         X
       </span>

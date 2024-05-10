@@ -11,8 +11,6 @@ function Header() {
     dispatch(getMoviesAction());
   }, [dispatch]);
 
-  console.log(movies)
-
   return (
     <>
       <div id='header'>
