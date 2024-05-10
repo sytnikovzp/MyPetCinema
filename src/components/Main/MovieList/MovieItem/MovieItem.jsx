@@ -41,12 +41,7 @@ function MovieItem({ movie }) {
       className={
         'movie-item-wrapper ' + (id === currMovie.id ? 'edit-now' : '')
       }
-      onDoubleClick={onMovieEdit}
     >
-      {/* <p className='content'>
-        {movieTitle} directed by {directorsList} was released in {releaseYear} year
-      </p> */}
-
       <div className='movie-item-img-container'>
         <img
           src={
@@ -59,7 +54,7 @@ function MovieItem({ movie }) {
         />
       </div>
       <div className='movie-item-info-container'>
-          <h3>{movieTitle ? movieTitle : 'NoName movie'}</h3>
+        <h3>{movieTitle ? movieTitle : 'NoName movie'}</h3>
         <div className='movie-item-info'>
           <div className='bold'>
             <p>Страна:</p>
@@ -76,9 +71,15 @@ function MovieItem({ movie }) {
         </div>
       </div>
 
-      <span className='delete-btn' onClick={onItemDelete}>
-        X
-      </span>
+      <div className='item-button-block'>
+        <span className='item-button edit-btn' onClick={onMovieEdit}>
+          <i className='fa fa-pencil-square-o' aria-hidden='true'></i>
+        </span>
+
+        <span className='item-button delete-btn' onClick={onItemDelete}>
+          <i className='fa fa-trash-o' aria-hidden='true'></i>
+        </span>
+      </div>
     </div>
   );
 }
