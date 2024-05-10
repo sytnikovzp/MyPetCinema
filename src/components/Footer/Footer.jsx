@@ -11,8 +11,8 @@ function Footer() {
           <div className='text-footer'>
             <span>Адрес киностудии</span>
             <p>
-              <a href='https://maps.app.goo.gl/c8b7NSXnsYFPatBZ9'>
-                г. Киев ул. Закревского, 22
+              <a href='https://maps.app.goo.gl/c8b7NSXnsYFPatBZ9' target='_blank'>
+                г. Киев, ул. Закревского, 22
               </a>
             </p>
           </div>
@@ -24,7 +24,7 @@ function Footer() {
           <div className='text-footer'>
             <span>E-mail режисёра</span>
             <p>
-              <a href={'mailto:' + 'faculty@film.ua'}>faculty@film.ua</a>
+              <a href={'mailto:' + 'director@mail.ua'}>director@mail.ua</a>
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ function Footer() {
           <div className='text-footer'>
             <span>Телефон автора сайта</span>
             <p>
-              <a href={'tel:' + '+38 044 459 46 10'}>+38 044 459 46 10</a>
+              <a href={'tel:' + '+38 044 123 45 67'}>+38 044 123 45 67</a>
             </p>
           </div>
         </div>
