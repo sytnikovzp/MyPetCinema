@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectMovie,
   deleteMovie,
-} from '../../../../store/slices/movieSlice';
+} from '../../../store/slices/movieSlice';
 import './MovieItem.css';
 
 function MovieItem({ movie }) {

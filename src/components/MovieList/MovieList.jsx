@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieItem from './MovieItem/MovieItem';
-import { getMovies } from '../../../store/slices/movieSlice';
+import { getMovies } from '../../store/slices/movieSlice';
 import './MovieList.css';
 
 function MovieList() {
@@ -14,12 +14,14 @@ function MovieList() {
   }, [dispatch]);
 
   return (
-    <div id='movie-list-wrapper'>
-      <h3>Bestselling movies:</h3>
-      <div id='movie-list'>
-        {movies.map((movie) => {
-          return <MovieItem key={movie.id} movie={movie} />;
-        })}
+    <div id='main'>
+      <div id='movie-list-wrapper'>
+        <h3>Bestselling movies:</h3>
+        <div id='movie-list'>
+          {movies.map((movie) => {
+            return <MovieItem key={movie.id} movie={movie} />;
+          })}
+        </div>
       </div>
     </div>
   );
