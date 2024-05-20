@@ -1,5 +1,5 @@
 import { put } from 'redux-saga/effects';
-import api from '../api/movie-service';
+import api from '../api';
 
 import {
   createMovieRequest,
