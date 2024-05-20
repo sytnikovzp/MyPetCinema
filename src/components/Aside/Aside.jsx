@@ -3,16 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   addNewMovie,
-  createMovieAction,
-  updateMovieAction,
-  deleteMovieAction,
-} from '../../store/actions/movieActions';
+  createMovie,
+  updateMovie,
+  deleteMovie,
+} from '../../store/slices/movieSlice';
 import './Aside.css';
 
 function Aside() {
   const dispatch = useDispatch();
 
-  const currentMovie = useSelector((state) => state.currentMovie);
+  const currentMovie = useSelector((state) => state.movieList.currentMovie);
   const [movie, setMovie] = useState(currentMovie);
 
   useEffect(() => {
@@ -41,14 +41,15 @@ function Aside() {
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (movie.id) {
-      dispatch(updateMovieAction(movie));
+      dispatch(updateMovie(movie));
     } else {
-      dispatch(createMovieAction(movie));
+      dispatch(createMovie(movie));
     }
   };
 
-  const onMovieDelete = () => {
-    dispatch(deleteMovieAction(movie.id));
+  const onMovieDelete = (event) => {
+    event.preventDefault();
+    dispatch(deleteMovie(movie.id));
   };
 
   return (

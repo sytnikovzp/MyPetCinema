@@ -4,7 +4,7 @@ import MoviePlayer from './MoviePlayer/MoviePlayer';
 import './MoviePage.css';
 
 function MoviePage() {
-  const currentMovie = useSelector((state) => state.currentMovie);
+  const currentMovie = useSelector((state) => state.movieList.currentMovie);
   const [currMovie, setCurrMovie] = useState(currentMovie);
 
   useEffect(() => {

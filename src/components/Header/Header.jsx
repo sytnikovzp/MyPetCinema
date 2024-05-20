@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMoviesAction } from '../../store/actions/movieActions';
+import { getMovies } from '../../store/slices/movieSlice';
 import './Header.css';
 
 function Header() {
   const dispatch = useDispatch();
-  const movies = useSelector((state) => state.arrMovies);
+  const movies = useSelector((state) => state.movieList.arrMovies);
 
   useEffect(() => {
-    dispatch(getMoviesAction());
+    dispatch(getMovies());
   }, [dispatch]);
 
   return (

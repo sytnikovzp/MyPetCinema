@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectMovie,
-  deleteMovieAction,
-} from '../../../../store/actions/movieActions';
+  deleteMovie,
+} from '../../../../store/slices/movieSlice';
 import './MovieItem.css';
 
 function MovieItem({ movie }) {
   const dispatch = useDispatch();
 
-  const currentMovie = useSelector((state) => state.currentMovie);
+  const currentMovie = useSelector((state) => state.movieList.currentMovie);
   const [currMovie, setCurrMovie] = useState(currentMovie);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function MovieItem({ movie }) {
 
   const onItemDelete = (event) => {
     event.stopPropagation();
-    dispatch(deleteMovieAction(id));
+    dispatch(deleteMovie(id));
   };
 
   return (
