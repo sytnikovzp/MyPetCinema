@@ -1,13 +1,15 @@
 import {
   BrowserRouter as Router,
   NavLink,
-  Link,
   Switch,
   Route,
   Redirect,
 } from 'react-router-dom';
-import MovieList from '../MovieList/MovieList';
 import MovieCarousel from '../MovieCarousel/MovieCarousel';
+import MovieList from '../MovieList/MovieList';
+import ActorsList from '../ActorsList/ActorsList';
+import DirectorsList from '../DirectorsList/DirectorsList';
+import StudiosList from '../StudiosList/StudiosList';
 import './Menu.css';
 
 function Menu() {
@@ -18,7 +20,9 @@ function Menu() {
         <nav>
           <ul>
             <li>
-              <Link to='/'>Home</Link>
+              <NavLink to='/' activeClassName='selected'>
+                Home
+              </NavLink>
             </li>
             <li>
               <NavLink to='/movies' activeClassName='selected'>
@@ -46,6 +50,9 @@ function Menu() {
       <Switch>
         <Route path='/' component={MovieCarousel} exact />
         <Route path='/movies' component={MovieList} />
+        <Route path='/actors' component={ActorsList} />
+        <Route path='/directors' component={DirectorsList} />
+        <Route path='/studios' component={StudiosList} />
         <Redirect path='*' to='' />
       </Switch>
     </Router>
