@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectMovie,
-  deleteMovie,
-} from '../../../store/slices/movieSlice';
+import { useRouteMatch, useHistory, Link } from 'react-router-dom';
+import { selectMovie, deleteMovie } from '../../../../store/slices/movieSlice';
 import './MovieItem.css';
 
 function MovieItem({ movie }) {
@@ -36,11 +34,21 @@ function MovieItem({ movie }) {
     dispatch(deleteMovie(id));
   };
 
+  const { url } = useRouteMatch();
+  // const history = useHistory();
+
+  const onMovieOpen = (url, id) => {
+    dispatch(selectMovie(movie));
+    // console.log(id);
+    // history.push(`${url}/${id}`);
+  };
+
   return (
     <div
       className={
         'movie-item-wrapper ' + (id === currMovie.id ? 'edit-now' : '')
       }
+      onClick={onMovieOpen}
     >
       <div className='movie-item-img-container'>
         <img
@@ -54,7 +62,11 @@ function MovieItem({ movie }) {
         />
       </div>
       <div className='movie-item-info-container'>
-        <h3>{movieTitle ? movieTitle : 'NoName movie'}</h3>
+        <h3>
+          <Link to={`${url}/${id}`}>
+            {movieTitle ? movieTitle : 'NoName movie'}
+          </Link>
+        </h3>
         <div className='movie-item-info'>
           <div className='bold'>
             <p>Страна:</p>

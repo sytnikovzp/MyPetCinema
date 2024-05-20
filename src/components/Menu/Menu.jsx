@@ -5,11 +5,11 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import MovieCarousel from '../MovieCarousel/MovieCarousel';
-import MovieList from '../MovieList/MovieList';
-import ActorsList from '../ActorsList/ActorsList';
-import DirectorsList from '../DirectorsList/DirectorsList';
-import StudiosList from '../StudiosList/StudiosList';
+import MoviesCarousel from '../MoviesCarousel/MoviesCarousel';
+import Movies from '../Movies/Movies';
+import Actors from '../Actors/Actors';
+import Directors from '../Directors/Directors';
+import Studios from '../Studios/Studios';
 import './Menu.css';
 
 function Menu() {
@@ -48,11 +48,11 @@ function Menu() {
         </nav>
       </div>
       <Switch>
-        <Route path='/' component={MovieCarousel} exact />
-        <Route path='/movies' component={MovieList} />
-        <Route path='/actors' component={ActorsList} />
-        <Route path='/directors' component={DirectorsList} />
-        <Route path='/studios' component={StudiosList} />
+        <Route path='/' component={MoviesCarousel} exact />
+        <Route path='/movies' component={Movies} />
+        <Route path='/actors' component={Actors} />
+        <Route path='/directors' component={Directors} />
+        <Route path='/studios' component={Studios} />
         <Redirect path='*' to='' />
       </Switch>
     </Router>

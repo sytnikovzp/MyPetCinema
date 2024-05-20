@@ -76,6 +76,7 @@
 
 .movie-item-wrapper:hover {
   background-color: #777;
+  cursor: pointer;
 }
 
 .movie-item-wrapper.edit-now {
