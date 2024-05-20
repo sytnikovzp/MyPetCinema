@@ -19,7 +19,7 @@ function Header() {
         <div className='img-header'>
           <i className='fa fa-film' aria-hidden='true'></i>
         </div>
-        <h2>Сегодня в прокате:</h2>
+        <h2>Latest movie arrivals:</h2>
         <ul>
           <li>
             {headerMovies.map((movie) => {
