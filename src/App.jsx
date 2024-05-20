@@ -13,7 +13,7 @@ class App extends React.Component {
         <Header />
         <div id='main-wrapper'>
           <Menu />
-          <Main />
+          {/* <Main /> */}
           <Aside />
         </div>
         <Footer />

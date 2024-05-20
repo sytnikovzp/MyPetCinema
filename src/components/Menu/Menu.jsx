@@ -6,8 +6,8 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import MovieList from '../Main/MovieList/MovieList'
-
+// import MovieList from '../Main/MovieList/MovieList'
+import Main from '../Main/Main';
 import './Menu.css';
 
 function Menu() {
@@ -47,7 +47,7 @@ function Menu() {
         <Route path='/' exact>
           Home
         </Route>
-        <Route path='/movies' component={MovieList} />
+        <Route path='/movies' component={Main} />
         <Redirect path='*' to='albums' />
       </Switch>
     </Router>
