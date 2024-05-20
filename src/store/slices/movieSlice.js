@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { moviesState } from '../../model/initialStates';
+import { setStatus, setError } from '../../services/reducerService';
 import { MOVIE_SLICE_NAME } from '../../constants';
 import api from '../../api';
 
@@ -79,16 +80,6 @@ export const deleteMovie = createAsyncThunk(
   }
 );
 
-const setFetching = (state) => {
-  state.isFetching = true;
-  state.error = null;
-};
-
-const setError = (state, action) => {
-  state.isFetching = false;
-  state.error = action.payload;
-};
-
 function createEmptyMovie() {
   return {
     id: null,
@@ -128,37 +119,37 @@ const movieSlice = createSlice({
   extraReducers: (builder) => {
     // Get all
     builder.addCase(getMovies.fulfilled, (state, { payload }) => {
-      state.isFetching = false;
+      state.status = 'fulfilled';
       state.error = null;
       state.arrMovies = payload;
       state.currentMovie = createEmptyMovie();
     });
-    builder.addCase(getMovies.pending, setFetching);
+    builder.addCase(getMovies.pending, setStatus);
     builder.addCase(getMovies.rejected, setError);
 
     // Create
     builder.addCase(createMovie.fulfilled, (state, { payload }) => {
-      state.isFetching = false;
+      state.status = 'fulfilled';
       state.error = null;
       state.arrMovies.push(payload);
       state.currentMovie = createEmptyMovie();
     });
-    builder.addCase(createMovie.pending, setFetching);
+    builder.addCase(createMovie.pending, setStatus);
     builder.addCase(createMovie.rejected, setError);
 
     // Update
     builder.addCase(updateMovie.fulfilled, (state, { payload }) => {
-      state.isFetching = false;
+      state.status = 'fulfilled';
       state.error = null;
       state.arrMovies = state.arrMovies.map((movie) =>
         movie.id !== payload.id ? movie : payload
       );
     });
-    builder.addCase(updateMovie.pending, setFetching);
+    builder.addCase(updateMovie.pending, setStatus);
     builder.addCase(updateMovie.rejected, setError);
 
     // Delete
-    builder.addCase(deleteMovie.pending, setFetching);
+    builder.addCase(deleteMovie.pending, setStatus);
     builder.addCase(deleteMovie.rejected, setError);
   },
 });
