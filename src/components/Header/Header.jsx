@@ -7,6 +7,8 @@ function Header() {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movieList.arrMovies);
 
+  const headerMovies = movies.slice(-3);
+
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -20,7 +22,7 @@ function Header() {
         <h2>Сегодня в прокате:</h2>
         <ul>
           <li>
-            {movies.map((movie) => {
+            {headerMovies.map((movie) => {
               return (
                 <a href={movie.id} key={movie.id}>
                   {movie.movieTitle ? movie.movieTitle : 'NoName movie'}
